@@ -1,6 +1,9 @@
-.test{
-    margin: 32px auto;
-    width:90%;
-    height: 90vh;
-    background-color: tomato;
+
+
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
