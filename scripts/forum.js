@@ -18,7 +18,8 @@ const displayAllPosts = (posts) => {
         postCard.innerHTML = `
                             <div class="w-[72px] relative">
                                 <img src="${post.image}" alt="Profile Picture">
-                                <img class="absolute -top-1 -right-1" src="images/online.svg" alt="online-offline">
+                                <img id="online-status-${post.id}" class="absolute -top-1 -right-1 hidden" src="images/online.svg" alt="online">
+                                <img id="offline-status-${post.id}" class="absolute -top-1 -right-1 hidden" src="images/offline.svg" alt="offline">
                             </div>
                             <div class="w-full flex flex-col gap-3">
                                 <div class="flex justify-start gap-5 text-[#12132DCC] text-sm font-medium">
@@ -35,11 +36,20 @@ const displayAllPosts = (posts) => {
                                         <div><i class="fa-regular fa-clock"></i> ${post.posted_time} min</div>
                                     </div>
                                     <div>
-                                        <button onclick="markAsRead('${post.title}', ${post.view_count})" id="mark-as-read" class="w-7 h-7 bg-[#10B981] border border-[#10B981] text-base text-white hover:bg-white hover:text-[#10B981] rounded-full"><i class="fa-solid fa-envelope-open"></i></button>
+                                        <button onclick="markAsRead('${post.title.replace(/'/g, '’')}', ${post.view_count})" id="mark-as-read" class="w-7 h-7 bg-[#10B981] border border-[#10B981] text-base text-white hover:bg-white hover:text-[#10B981] rounded-full"><i class="fa-solid fa-envelope-open"></i></button>
                                     </div>
                                 </div>
                             </div>`;
         allPostsContainer.appendChild(postCard);
+
+        const onlineStatus = document.getElementById(`online-status-${post.id}`);
+        const offlineStatus = document.getElementById(`offline-status-${post.id}`);
+        if (post.isActive) {
+            onlineStatus.classList.remove('hidden');
+        }
+        if (!post.isActive) {
+            offlineStatus.classList.remove('hidden');
+        }
     });
 
 }
@@ -56,6 +66,8 @@ const markAsRead = (title, viewCount) => {
                 <h5 class="text-[#12132D99] text-sm lg:text-base"><i class="fa-regular fa-eye"></i> ${viewCount}</h5>
             `;
     markedAsReadContainer.appendChild(readPostCard);
+
+    // Mark as Read Counter on the Right Side
     if (markAsRead) {
         postReadCount++;
         postReadCountContainer.innerText = postReadCount;
