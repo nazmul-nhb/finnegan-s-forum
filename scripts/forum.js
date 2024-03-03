@@ -38,7 +38,7 @@ const displayAllPosts = (posts) => {
                                         <div><i class="fa-regular fa-clock"></i> ${post.posted_time} min</div>
                                     </div>
                                     <div>
-                                        <button onclick="markAsRead('${post.title.replace(/'/g, '’')}', ${post.view_count})" id="mark-as-read" class="w-7 h-7 bg-[#10B981] border border-[#10B981] text-base text-white hover:bg-white hover:text-[#10B981] rounded-full"><i class="fa-solid fa-envelope-open"></i></button>
+                                        <button onclick="markAsRead('${post.title.replace(/'/g, '’')}', ${post.view_count})" id="mark-as-read" class="w-7 h-7 bg-[#10B981] border border-[#10B981] text-base text-white hover:bg-transparent hover:text-[#10B981] rounded-full"><i class="fa-solid fa-envelope-open"></i></button>
                                     </div>
                                 </div>
                             </div>`;
@@ -82,6 +82,7 @@ const loadLatestPosts = async () => {
     displayLatestPosts(latestPosts);
 }
 
+// Display Latest Posts Dynamically
 const displayLatestPosts = (latestPosts) => {
     latestPosts.forEach(post => {
         const latestPostCard = document.createElement('div');
@@ -90,14 +91,15 @@ const displayLatestPosts = (latestPosts) => {
                     <div class="w-full h-auto rounded-[20px]"><img class="w-full h-auto rounded-[20px]"
                                 src="${post.cover_image}" alt="Cover Photo">
                     </div>
-                    <h4 class="text-[#12132D99]"><i class="fa-regular fa-calendar-minus"></i> ${post?.author?.posted_date} </h4>
+                    <h4 class="text-[#12132D99]">
+                    <i class="fa-regular fa-calendar-minus"></i> ${post?.author?.posted_date || 'No Publish Date'} </h4>
                     <h3 class="font-extrabold text-lg">${post.title}</h3>
                     <p class="text-[#12132D99]">${post.description}</p>
                     <div class="flex justify-start gap-4">
                         <img class="w-12 h-12 rounded-full" src="${post.profile_image}" alt="Profile Picture">
                         <div class="flex flex-col gap-1">
-                            <h3 class="font-bold">${post?.author?.name}</h3>
-                            <h4 class="text-[#12132D99] text-sm">${post?.author.designation}</h4>
+                            <h3 class="font-bold">${post?.author?.name || 'Name Not Available'}</h3>
+                            <h4 class="text-[#12132D99] text-sm">${post?.author.designation || 'Unknown'}</h4>
                         </div>
                     </div>
         `;
