@@ -6,6 +6,9 @@ const loadAllPosts = async () => {
 }
 
 const allPostsContainer = document.getElementById('all-posts-container');
+const postReadCountContainer = document.getElementById('post-read-count');
+let postReadCount = parseInt(postReadCountContainer.innerText);
+const markAsReadButton = document.getElementById('mark-as-read');
 
 const displayAllPosts = (posts) => {
     posts.forEach(post => {
@@ -38,6 +41,7 @@ const displayAllPosts = (posts) => {
                             </div>`;
         allPostsContainer.appendChild(postCard);
     });
+
 }
 
 
@@ -52,9 +56,11 @@ const markAsRead = (title, viewCount) => {
                 <h5 class="text-[#12132D99] text-sm lg:text-base"><i class="fa-regular fa-eye"></i> ${viewCount}</h5>
             `;
     markedAsReadContainer.appendChild(readPostCard);
+    if (markAsRead) {
+        postReadCount++;
+        postReadCountContainer.innerText = postReadCount;
+    }
 };
-
-
 
 
 
