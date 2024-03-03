@@ -1,3 +1,4 @@
+// Load All Posts from API
 const loadAllPosts = async () => {
     const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/posts');
     const data = await res.json();
@@ -8,7 +9,8 @@ const loadAllPosts = async () => {
 const allPostsContainer = document.getElementById('all-posts-container');
 const postReadCountContainer = document.getElementById('post-read-count');
 let postReadCount = parseInt(postReadCountContainer.innerText);
-const markAsReadButton = document.getElementById('mark-as-read');
+// const markAsReadButton = document.getElementById('mark-as-read');
+const latestPostsContainer = document.getElementById('latest-posts-container');
 
 const displayAllPosts = (posts) => {
     posts.forEach(post => {
@@ -51,7 +53,6 @@ const displayAllPosts = (posts) => {
             offlineStatus.classList.remove('hidden');
         }
     });
-
 }
 
 
@@ -74,6 +75,37 @@ const markAsRead = (title, viewCount) => {
     }
 };
 
+// Load Latest Posts from API
+const loadLatestPosts = async () => {
+    const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/latest-posts');
+    const latestPosts = await res.json();
+    displayLatestPosts(latestPosts);
+}
+
+const displayLatestPosts = (latestPosts) => {
+    latestPosts.forEach(post => {
+        const latestPostCard = document.createElement('div');
+        latestPostCard.className = 'flex flex-col gap-6 p-6 rounded-3xl border border-[#12132D26] bg-white';
+        latestPostCard.innerHTML = `
+                    <div class="w-full h-auto rounded-[20px]"><img class="w-full h-auto rounded-[20px]"
+                                src="${post.cover_image}" alt="Cover Photo">
+                    </div>
+                    <h4 class="text-[#12132D99]"><i class="fa-regular fa-calendar-minus"></i> ${post?.author?.posted_date} </h4>
+                    <h3 class="font-extrabold text-lg">${post.title}</h3>
+                    <p class="text-[#12132D99]">${post.description}</p>
+                    <div class="flex justify-start gap-4">
+                        <img class="w-12 h-12 rounded-full" src="${post.profile_image}" alt="Profile Picture">
+                        <div class="flex flex-col gap-1">
+                            <h3 class="font-bold">${post?.author?.name}</h3>
+                            <h4 class="text-[#12132D99] text-sm">${post?.author.designation}</h4>
+                        </div>
+                    </div>
+        `;
+        latestPostsContainer.appendChild(latestPostCard);
+    });
+}
+
 
 
 loadAllPosts();
+loadLatestPosts();
