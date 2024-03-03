@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="styles/forum.css">
 </head>
 
-<body>
+<body class="text-[#12132D]">
     <!-- Header Section -->
     <header>
         <!-- NavBar -->
@@ -38,7 +38,8 @@
             <div
                 class="flex flex-col lg:flex-row justify-between items-center gap-4 lg:gap-3 w-auto mx-8 lg:mx-24 mt-4 lg:mt-12">
                 <div class="">
-                    <h3 class="text-[#12132D] font-extrabold text-3xl lg:text-4xl">Finnegan's Forum</h3>
+                    <h3 class="text-[#12132D] font-extrabold text-3xl lg:text-4xl"><a href="#hero-section">Finnegan’s
+                            Forum</a></h3>
                 </div>
                 <div class="flex justify-between items-center gap-2 lg:gap-6">
                     <div class="flex justify-around items-center gap-2 lg:gap-3">
@@ -76,7 +77,7 @@
 
     <!-- Main Section -->
     <main>
-        <!-- Hero Section -->
+        <!-- Top Banner/Hero Section -->
         <section id="hero-section" class="mx-8 lg:mx-32 lg:mt-12 mt-8">
             <div class="max-w-[1440px] w-full mx-auto">
                 <!-- BG Image -->
@@ -87,24 +88,30 @@
                         class="w-full px-3 py-4 lg:p-24 flex flex-col lg:flex-row justify-center items-center lg:justify-between">
                         <!-- Title & Search -->
                         <div class="w-full lg:w-3/5 flex flex-col gap-2 lg:gap-5 p-2">
-                            <h2 class="text-white text-2xl lg:text-6xl font-black text-center lg:text-left" style="line-height: 125%;">Welcome to the <br>
-                                <span class="gradient-title-fin">Finnegan's</span> Forum</h2>
+                            <h2 class="text-white text-2xl lg:text-6xl font-black text-center lg:text-left"
+                                style="line-height: 125%;">Welcome to the <br>
+                                <span class="gradient-title-fin">Finnegan’s</span> Forum
+                            </h2>
 
-                            <p class="w-full lg:w-3/5 text-white text-base lg:text-xl font-medium text-center lg:text-left mb-4">Share your favorite opinion and win and wp
+                            <p
+                                class="w-full lg:w-3/5 text-white text-base lg:text-xl font-medium text-center lg:text-left mb-4">
+                                Share your favorite opinion and win and wp
                                 forum
                                 coffee mug!</p>
                             <!-- Search -->
-                            <div class="w-full lg:w-2/3 flex justify-between items-center gap-1 h-11 lg:h-14 bg-white p-2 rounded-[46px]">
+                            <div
+                                class="w-full lg:w-2/3 flex justify-between items-center gap-1 h-11 lg:h-14 bg-white p-2 rounded-[46px]">
                                 <form class="px-0">
-                                    <input class="input rounded-[46px] text-sm lg:text-base w-full h-8 lg:h-13" type="text" name="search" id="search-field"
-                                        placeholder="Search anything here">
+                                    <input class="input rounded-[46px] text-sm lg:text-base w-full h-8 lg:h-13"
+                                        type="text" name="search" id="search-field" placeholder="Search anything here">
                                 </form>
                                 <button
                                     class="w-[100px] lg:w-28 h-9 lg:h-11 p-0 text-base lg:text-xl font-bold rounded-[46px] text-white bg-[#797DFC] border-[#797DFC] border hover:bg-white hover:border-[#797DFC] hover:text-[#797DFC]">Search</button>
                             </div>
                         </div>
                         <!-- Stats -->
-                        <div class="w-11/12 lg:w-1/3 font-medium text-base lg:text-2xl flex flex-col gap-2 lg:gap-6 bg-white p-6 lg:p-12 rounded-[32px]">
+                        <div
+                            class="w-11/12 lg:w-1/3 font-medium text-base lg:text-2xl flex flex-col gap-2 lg:gap-6 bg-white p-6 lg:p-12 rounded-[32px]">
                             <div class="flex justify-between items-center">
                                 <h3>Registered Users</h3>
                                 <span>20</span>
@@ -128,17 +135,81 @@
         </section>
 
         <!-- Let's Discuss Section -->
-        <section id="discuss-section" class="">
-
+        <section id="discuss-section" class="mx-8 lg:mx-32 lg:mt-24 mt-8">
+            <div class="text-center mb-12">
+                <h2 class="text-5xl font-black">Let’s Discuss</h2>
+                <p class="w-3/5 mx-auto mt-6 text-[#12132D99] text-lg">Express your thoughts here. Join millions of
+                    freethinkers who think for themselves and for others. Enlighten the world!</p>
+            </div>
+            <!-- Posts & Read Count Container -->
+            <div class="flex gap-6 justify-between">
+                <!-- Posts -->
+                <div id="cards-container" class="w-3/5 flex flex-col gap-6">
+                    <!-- Dynamic Cards -->
+                    <div class="w-full bg-[#797DFC1A] p-10 rounded-3xl flex justify-start gap-6">
+                        <div class="w-[72px] relative">
+                            <img src="images/blank-pp.png" alt="PP">
+                            <img class="absolute -top-1 -right-1" src="images/online.svg" alt="online-offline">
+                        </div>
+                        <div class="flex flex-col gap-3">
+                            <div class="flex justify-start gap-5 text-[#12132DCC] text-sm font-medium">
+                                <h6># Music</h6>
+                                <h6>Author: Awlad Hossain</h6>
+                            </div>
+                            <h2 class="font-bold text-xl mb-2">10 Kids Unaware of Their Halloween Costume</h2>
+                            <p class="text-[#12132D99]">It’s one thing to subject yourself to ha Halloween costume
+                                mishap because, hey
+                                that’s your prerogative</p>
+                            <hr class="border border-dashed border-[#12132D40]">
+                            <div class="flex justify-between items-center">
+                                <div class="flex justify-start items-center gap-7 text-[#12132D99]">
+                                    <div class="">
+                                        <i class="fa-regular fa-message"></i> 560
+                                    </div>
+                                    <div class="">
+                                        <i class="fa-regular fa-eye"></i> 1,568
+                                    </div>
+                                    <div class="">
+                                        <i class="fa-regular fa-clock"></i> 5 min
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <button class="w-7 h-7 bg-[#10B981] text-base text-white rounded-full"><i
+                                            class="fa-solid fa-envelope-open"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Marked as Read -->
+                <div class="w-2/5 p-6 rounded-3xl bg-[#12132D0D] flex flex-col gap-4">
+                    <!-- Header for Lists -->
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-xl font-bold">Title</h3>
+                        <p class="text-[#12132D99]">
+                            <i class="fa-solid fa-check-double text-[#3DCE09]"></i> Mark as read (<span
+                                id="read-count">0</span>)
+                        </p>
+                    </div>
+                    <!-- Dynamic Marked Titles Container -->
+                    <div id="card-container" class="flex flex-col gap-4">
+                        <!-- Dynamic Marked Title -->
+                        <div class="bg-white rounded-2xl p-4 flex justify-between items-center flex-1 gap-2">
+                            <h4 class="font-semibold w-3/5">10 Kids Unaware of Their Halloween Costume</h4>
+                            <h5 class="text-[#12132D99]"><i class="fa-regular fa-eye"></i> 1,568</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Middle Banner -->
-        <section id="middle-banner" class="">
+        <section id="middle-banner" class="mx-8 lg:mx-32 lg:mt-12 mt-8">
 
         </section>
 
         <!-- Latest Posts -->
-        <section id="latest-posts" class="">
+        <section id="latest-posts" class="mx-8 lg:mx-32 lg:mt-12 mt-8">
 
         </section>
     </main>
