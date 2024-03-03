@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReTro Forum</title>
+    <title>Finnegan’s Forum</title>
 
     <!-- DaisyUI CDN -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
@@ -95,9 +95,7 @@
 
                             <p
                                 class="w-full lg:w-3/5 text-white text-base lg:text-xl font-medium text-center lg:text-left mb-4">
-                                Share your favorite opinion and win and wp
-                                forum
-                                coffee mug!</p>
+                                Express your thoughts here. Join millions of freethinkers who think for themselves and for others. Enlighten the world!</p>
                             <!-- Search -->
                             <div
                                 class="w-full lg:w-2/3 flex justify-between items-center gap-1 h-11 lg:h-14 bg-white p-2 rounded-[46px]">
@@ -137,16 +135,16 @@
         <!-- Let's Discuss Section -->
         <section id="discuss-section" class="mx-8 lg:mx-32 lg:mt-24 mt-8">
             <div class="text-center mb-12">
-                <h2 class="text-5xl font-black">Let’s Discuss</h2>
-                <p class="w-3/5 mx-auto mt-6 text-[#12132D99] text-lg">Express your thoughts here. Join millions of
+                <h2 class="text-2xl lg:text-5xl font-black">Let’s Discuss</h2>
+                <p class="w-full lg:w-3/5 mx-auto mt-6 text-[#12132D99] text-lg">Express your thoughts here. Join millions of
                     freethinkers who think for themselves and for others. Enlighten the world!</p>
             </div>
             <!-- Posts & Read Count Container -->
-            <div class="flex gap-6 justify-between">
+            <div class="flex flex-col lg:flex-row gap-6 justify-between">
                 <!-- Posts -->
-                <div id="cards-container" class="w-3/5 flex flex-col gap-6">
+                <div id="cards-container" class="w-full lg:w-3/5 flex flex-col gap-6">
                     <!-- Dynamic Cards -->
-                    <div class="w-full bg-[#797DFC1A] p-10 rounded-3xl flex justify-start gap-6">
+                    <div class="w-full bg-[#797DFC1A] p-4 lg:p-10 rounded-3xl flex flex-col lg:flex-row justify-start gap-6">
                         <div class="w-[72px] relative">
                             <img src="images/blank-pp.png" alt="PP">
                             <img class="absolute -top-1 -right-1" src="images/online.svg" alt="online-offline">
@@ -156,13 +154,13 @@
                                 <h6># Music</h6>
                                 <h6>Author: Awlad Hossain</h6>
                             </div>
-                            <h2 class="font-bold text-xl mb-2">10 Kids Unaware of Their Halloween Costume</h2>
-                            <p class="text-[#12132D99]">It’s one thing to subject yourself to ha Halloween costume
+                            <h2 class="font-bold text-lg lg:text-xl mb-2">10 Kids Unaware of Their Halloween Costume</h2>
+                            <p class="text-[#12132D99] text-sm lg:text-base">It’s one thing to subject yourself to ha Halloween costume
                                 mishap because, hey
                                 that’s your prerogative</p>
                             <hr class="border border-dashed border-[#12132D40]">
                             <div class="flex justify-between items-center">
-                                <div class="flex justify-start items-center gap-7 text-[#12132D99]">
+                                <div class="flex justify-start items-center gap-3 lg:gap-7 text-[#12132D99]">
                                     <div class="">
                                         <i class="fa-regular fa-message"></i> 560
                                     </div>
@@ -174,7 +172,7 @@
                                     </div>
                                 </div>
                                 <div class="">
-                                    <button class="w-7 h-7 bg-[#10B981] text-base text-white rounded-full"><i
+                                    <button class="w-7 h-7 bg-[#10B981] border border-[#10B981] text-base text-white hover:bg-white hover:text-[#10B981] rounded-full"><i
                                             class="fa-solid fa-envelope-open"></i></button>
                                 </div>
                             </div>
@@ -182,11 +180,11 @@
                     </div>
                 </div>
                 <!-- Marked as Read -->
-                <div class="w-2/5 p-6 rounded-3xl bg-[#12132D0D] flex flex-col gap-4">
+                <div class="w-full lg:w-2/5 p-3 lg:p-6 rounded-3xl bg-[#12132D0D] flex flex-col gap-4">
                     <!-- Header for Lists -->
                     <div class="flex justify-between items-center">
-                        <h3 class="text-xl font-bold">Title</h3>
-                        <p class="text-[#12132D99]">
+                        <h3 class="text-base lg:text-xl font-bold">Title</h3>
+                        <p class="text-[#12132D99] text-sm lg:text-base">
                             <i class="fa-solid fa-check-double text-[#3DCE09]"></i> Mark as read (<span
                                 id="read-count">0</span>)
                         </p>
@@ -194,9 +192,9 @@
                     <!-- Dynamic Marked Titles Container -->
                     <div id="card-container" class="flex flex-col gap-4">
                         <!-- Dynamic Marked Title -->
-                        <div class="bg-white rounded-2xl p-4 flex justify-between items-center flex-1 gap-2">
-                            <h4 class="font-semibold w-3/5">10 Kids Unaware of Their Halloween Costume</h4>
-                            <h5 class="text-[#12132D99]"><i class="fa-regular fa-eye"></i> 1,568</h5>
+                        <div class="bg-white rounded-2xl p-2 lg:p-4 flex justify-between items-center flex-1 gap-2">
+                            <h4 class="text-sm lg:text-xl font-semibold w-3/5">10 Kids Unaware of Their Halloween Costume</h4>
+                            <h5 class="text-[#12132D99] text-sm lg:text-base"><i class="fa-regular fa-eye"></i> 1,568</h5>
                         </div>
                     </div>
                 </div>
