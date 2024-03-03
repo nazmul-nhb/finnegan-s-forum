@@ -36,12 +36,12 @@
         <!-- NavBar -->
         <nav class="max-w-[1440px] w-full mx-auto">
             <div
-                class="flex flex-col lg:flex-row justify-between items-center gap-4 lg:gap-3 w-auto mx-8 lg:mx-24 mt-4 lg:mt-12">
-                <div class="">
-                    <h3 class="text-[#12132D] font-extrabold text-3xl lg:text-4xl"><a href="#hero-section">Finnegan’s
+                class="flex flex-col lg:flex-row justify-between items-center gap-4 lg:gap-3 w-auto mx-8 lg:mx-32 mt-4 lg:mt-12">
+                <div class="text-center">
+                    <h3 class="text-[#12132D] font-extrabold text-[28px] lg:text-4xl"><a href="#hero-section">Finnegan’s
                             Forum</a></h3>
                 </div>
-                <div class="flex justify-between items-center gap-2 lg:gap-6">
+                <div class="flex flex-col lg:flex-row justify-between items-center gap-2 lg:gap-6">
                     <div class="flex justify-around items-center gap-2 lg:gap-3">
                         <button
                             class="btn btn-circle bg-white border-[#0307121a] border-2 hover:bg-transparent hover:opacity-50"
@@ -95,7 +95,8 @@
 
                             <p
                                 class="w-full lg:w-3/5 text-[#FFFFFFCC] text-base lg:text-xl font-medium text-center lg:text-left mb-4">
-                                Express your thoughts here. Join millions of freethinkers who think for themselves and for others. Enlighten the world!</p>
+                                Express your thoughts here. Join millions of freethinkers who think for themselves and
+                                for others. Enlighten the world!</p>
                             <!-- Search -->
                             <div
                                 class="w-full lg:w-2/3 flex justify-between items-center gap-1 h-11 lg:h-14 bg-white p-2 rounded-[46px]">
@@ -134,67 +135,77 @@
 
         <!-- Let's Discuss Section -->
         <section id="discuss-section" class="mx-8 lg:mx-32 lg:mt-24 mt-8">
-            <div class="text-center mb-12">
-                <h2 class="text-2xl lg:text-5xl font-black">Let’s Discuss</h2>
-                <p class="w-full lg:w-3/5 mx-auto mt-6 text-[#12132D99] text-base lg:text-lg">Express your thoughts here. Join millions of
-                    freethinkers who think for themselves and for others. Enlighten the world!</p>
-            </div>
-            <!-- Posts & Read Count Container -->
-            <div class="flex flex-col lg:flex-row gap-6 justify-between">
-                <!-- Posts -->
-                <div id="cards-container" class="w-full lg:w-3/5 flex flex-col gap-6">
-                    <!-- Dynamic Cards -->
-                    <div class="w-full bg-[#797DFC1A] p-4 lg:p-10 rounded-3xl flex flex-col lg:flex-row justify-start gap-6">
-                        <div class="w-[72px] relative">
-                            <img src="images/blank-pp.png" alt="PP">
-                            <img class="absolute -top-1 -right-1" src="images/online.svg" alt="online-offline">
-                        </div>
-                        <div class="flex flex-col gap-3">
-                            <div class="flex justify-start gap-5 text-[#12132DCC] text-sm font-medium">
-                                <h6># Music</h6>
-                                <h6>Author: Awlad Hossain</h6>
-                            </div>
-                            <h2 class="font-bold text-lg lg:text-xl mb-2">10 Kids Unaware of Their Halloween Costume</h2>
-                            <p class="text-[#12132D99] text-sm lg:text-base">It’s one thing to subject yourself to ha Halloween costume
-                                mishap because, hey
-                                that’s your prerogative</p>
-                            <hr class="border border-dashed border-[#12132D40]">
-                            <div class="flex justify-between items-center">
-                                <div class="flex justify-start items-center gap-3 lg:gap-7 text-[#12132D99]">
-                                    <div class="">
-                                        <i class="fa-regular fa-message"></i> 560
-                                    </div>
-                                    <div class="">
-                                        <i class="fa-regular fa-eye"></i> 1,568
-                                    </div>
-                                    <div class="">
-                                        <i class="fa-regular fa-clock"></i> 5 min
-                                    </div>
-                                </div>
-                                <div class="">
-                                    <button class="w-7 h-7 bg-[#10B981] border border-[#10B981] text-base text-white hover:bg-white hover:text-[#10B981] rounded-full"><i
-                                            class="fa-solid fa-envelope-open"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="max-w-[1440px] w-full mx-auto">
+                <!-- Let's Discuss Title & Description -->
+                <div class="text-center mb-12">
+                    <h2 class="text-2xl lg:text-5xl font-black">Let’s Discuss</h2>
+                    <p class="w-full lg:w-3/5 mx-auto mt-6 text-[#12132D99] text-base lg:text-lg">Express your thoughts
+                        here. Join millions of
+                        freethinkers who think for themselves and for others. Enlighten the world!</p>
                 </div>
-                <!-- Marked as Read -->
-                <div class="w-full lg:w-2/5 p-3 lg:p-6 rounded-3xl bg-[#12132D0D] flex flex-col gap-4">
-                    <!-- Header for Lists -->
-                    <div class="flex justify-between items-center">
-                        <h3 class="text-base lg:text-xl font-bold">Title</h3>
-                        <p class="text-[#12132D99] text-sm lg:text-base">
-                            <i class="fa-solid fa-check-double text-[#3DCE09]"></i> Mark as read (<span
-                                id="read-count">0</span>)
-                        </p>
+                <!-- Posts & Read Count Container -->
+                <div class="flex flex-col lg:flex-row gap-6 justify-between">
+                    <!-- Posts -->
+                    <div id="cards-container" class="w-full lg:w-3/5 flex flex-col gap-6">
+                        <!-- Dynamic Cards -->
+                        <div
+                            class="w-full bg-[#797DFC1A] p-4 lg:p-10 rounded-3xl flex flex-col lg:flex-row justify-start gap-6">
+                            <div class="w-[72px] relative">
+                                <img src="images/blank-pp.png" alt="PP">
+                                <img class="absolute -top-1 -right-1" src="images/online.svg" alt="online-offline">
+                            </div>
+                            <div class="flex flex-col gap-3">
+                                <div class="flex justify-start gap-5 text-[#12132DCC] text-sm font-medium">
+                                    <h6># Music</h6>
+                                    <h6>Author: Awlad Hossain</h6>
+                                </div>
+                                <h2 class="font-bold text-lg lg:text-xl mb-2">10 Kids Unaware of Their Halloween Costume
+                                </h2>
+                                <p class="text-[#12132D99] text-sm lg:text-base">It’s one thing to subject yourself to
+                                    ha Halloween costume
+                                    mishap because, hey
+                                    that’s your prerogative</p>
+                                <hr class="border border-dashed border-[#12132D40]">
+                                <div class="flex justify-between items-center">
+                                    <div class="flex justify-start items-center gap-3 lg:gap-7 text-[#12132D99]">
+                                        <div class="">
+                                            <i class="fa-regular fa-message"></i> 560
+                                        </div>
+                                        <div class="">
+                                            <i class="fa-regular fa-eye"></i> 1,568
+                                        </div>
+                                        <div class="">
+                                            <i class="fa-regular fa-clock"></i> 5 min
+                                        </div>
+                                    </div>
+                                    <div class="">
+                                        <button
+                                            class="w-7 h-7 bg-[#10B981] border border-[#10B981] text-base text-white hover:bg-white hover:text-[#10B981] rounded-full"><i
+                                                class="fa-solid fa-envelope-open"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <!-- Dynamic Marked Titles Container -->
-                    <div id="card-container" class="flex flex-col gap-4">
-                        <!-- Dynamic Marked Title -->
-                        <div class="bg-white rounded-2xl p-2 lg:p-4 flex justify-between items-center flex-1 gap-2">
-                            <h4 class="text-sm lg:text-xl font-semibold w-3/5">10 Kids Unaware of Their Halloween Costume</h4>
-                            <h5 class="text-[#12132D99] text-sm lg:text-base"><i class="fa-regular fa-eye"></i> 1,568</h5>
+                    <!-- Marked as Read -->
+                    <div class="w-full lg:w-2/5 p-3 lg:p-6 rounded-3xl bg-[#12132D0D] flex flex-col gap-4">
+                        <!-- Header for Lists -->
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-base lg:text-xl font-bold">Title</h3>
+                            <p class="text-[#12132D99] text-sm lg:text-base">
+                                <i class="fa-solid fa-check-double text-[#3DCE09]"></i> Mark as read (<span
+                                    id="read-count">0</span>)
+                            </p>
+                        </div>
+                        <!-- Dynamic Marked Titles Container -->
+                        <div id="card-container" class="flex flex-col gap-4">
+                            <!-- Dynamic Marked Title -->
+                            <div class="bg-white rounded-2xl p-2 lg:p-4 flex justify-between items-center flex-1 gap-2">
+                                <h4 class="text-sm lg:text-xl font-semibold w-3/5">10 Kids Unaware of Their Halloween
+                                    Costume</h4>
+                                <h5 class="text-[#12132D99] text-sm lg:text-base"><i class="fa-regular fa-eye"></i>
+                                    1,568</h5>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -203,11 +214,16 @@
 
         <!-- Middle Banner -->
         <section id="middle-banner" class="mx-8 lg:mx-32 lg:mt-24 mt-8">
-            <div class="w-full h-auto bg-[#12132D] rounded-[32px] flex flex-col gap-4 lg:flex-row justify-between p-4 lg:pt-16 lg:pr-4 lg:pl-20 lg:pb-0">
-                <div class="text-white flex flex-col items-center lg:items-start gap-4 lg:pt-4 text-center lg:text-left">
+            <div
+                class="max-w-[1440px] mx-auto w-full h-auto bg-[#12132D] rounded-[32px] flex flex-col gap-4 lg:flex-row justify-between p-4 lg:pt-16 lg:pr-4 lg:pl-20 lg:pb-0">
+                <div
+                    class="text-white flex flex-col items-center lg:items-start gap-4 lg:pt-4 text-center lg:text-left">
                     <h2 class="text-2xl lg:text-4xl font-black">Join Our Forum</h2>
-                    <p class="textbase lg:text-lg mb-4 text-[#FFFFFFCC]">Express your thoughts here. Join millions of freethinkers who think for themselves and for others. Enlighten the world!</p>
-                    <button class="w-44 h-12 text-xl font-bold text-white bg-[#797DFC] border border-[#797DFC] hover:bg-transparent hover:text-[#797DFC] rounded-[50px]">Register Now</button>
+                    <p class="textbase lg:text-lg mb-4 text-[#FFFFFFCC]">Express your thoughts here. Join millions of
+                        freethinkers who think for themselves and for others. Enlighten the world!</p>
+                    <button
+                        class="w-44 h-12 text-xl font-bold text-white bg-[#797DFC] border border-[#797DFC] hover:bg-transparent hover:text-[#797DFC] rounded-[50px]">Register
+                        Now</button>
                 </div>
                 <div class=""><img src="images/joinforum.png" alt="Join Forum"></div>
             </div>
@@ -215,7 +231,32 @@
 
         <!-- Latest Posts -->
         <section id="latest-posts" class="mx-8 lg:mx-32 lg:mt-24 mt-8">
-
+            <div class="max-w-[1440px] w-full mx-auto">
+                <!-- Latest Posts Title & Description -->
+                <div class="text-center mb-12">
+                    <h2 class="text-2xl lg:text-5xl font-black">Latest Posts</h2>
+                    <p class="w-full lg:w-3/5 mx-auto mt-6 text-[#12132D99] text-base lg:text-lg">Express your thoughts
+                        here. Join millions of
+                        freethinkers who think for themselves and for others. Enlighten the world!</p>
+                </div>
+                <!-- Latest Posts Cards Container -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <!-- Dynamic Latest Post Card -->
+                    <div class="flex flex-col gap-6 p-6 rounded-3xl border border-[#12132D26] bg-white">
+                        <div class="w-full h-auto rounded-[20px]"><img class="w-full h-auto rounded-[20px]" src="images/blank-cover.png" alt="Cover Photo"></div>
+                        <h4 class="text-[#12132D99]"><i class="fa-regular fa-calendar-minus"></i> 29 January 2024</h4>
+                        <h3 class="font-extrabold text-lg">What will a mars habitat force that impact in our daily life!!!</h3>
+                        <p class="text-[#12132D99]">Yes, you can run unit tests and view the results directly within the app.</p>
+                        <div class="flex justify-start gap-4">
+                            <img class="w-12 h-12 rounded-full" src="images/dummy-pp.png" alt="Profile Picture">
+                            <div class="flex flex-col gap-1">
+                                <h3 class="font-bold">Cameron Williamson</h3>
+                                <h4 class="text-[#12132D99] text-sm">Developer</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
     <!-- Footer -->
