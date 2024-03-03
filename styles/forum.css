@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
 /* Google Font : Mulish */
 body {
     font-family: "Mulish", sans-serif;
@@ -9,4 +10,11 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+/* Top Banner Title : Text Gradient */
+.gradient-title-fin {
+    background: linear-gradient(rgba(121, 125, 252), rgba(121, 125, 252, 0));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }

@@ -10,7 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Tailwind Custom Color -->
+    <!-- Tailwind Custom Classes -->
     <script>
         tailwind.config = {
             theme: {
@@ -34,28 +34,38 @@
     <!-- Header Section -->
     <header>
         <!-- NavBar -->
-        <nav class="mx-auto">
-            <div class="flex flex-col lg:flex-row justify-between items-center gap-4 lg:gap-3 w-auto mx-5 lg:mx-24 mt-4 lg:mt-12">
+        <nav class="max-w-[1440px] w-full mx-auto">
+            <div
+                class="flex flex-col lg:flex-row justify-between items-center gap-4 lg:gap-3 w-auto mx-8 lg:mx-24 mt-4 lg:mt-12">
                 <div class="">
                     <h3 class="text-[#12132D] font-extrabold text-3xl lg:text-4xl">Finnegan's Forum</h3>
                 </div>
                 <div class="flex justify-between items-center gap-2 lg:gap-6">
                     <div class="flex justify-around items-center gap-2 lg:gap-3">
-                        <button class="btn btn-circle bg-white border-[#0307121a] border-2 hover:bg-transparent hover:opacity-50" title="Home">
+                        <button
+                            class="btn btn-circle bg-white border-[#0307121a] border-2 hover:bg-transparent hover:opacity-50"
+                            title="Home">
                             <img src="images/home.svg" alt="Home">
                         </button>
-                        <button class="btn btn-circle bg-white border-[#0307121a] border-2 hover:bg-transparent hover:opacity-50" title="Edit">
+                        <button
+                            class="btn btn-circle bg-white border-[#0307121a] border-2 hover:bg-transparent hover:opacity-50"
+                            title="Edit">
                             <img src="images/edit.svg" alt="Edit">
                         </button>
-                        <button class="btn btn-circle bg-white border-[#0307121a] border-2 hover:bg-transparent hover:opacity-50" title="Add">
+                        <button
+                            class="btn btn-circle bg-white border-[#0307121a] border-2 hover:bg-transparent hover:opacity-50"
+                            title="Add">
                             <img src="images/add.svg" alt="Add">
                         </button>
-                        <button class="btn btn-circle bg-white border-[#0307121a] border-2 hover:bg-transparent hover:opacity-50" title="Flag">
+                        <button
+                            class="btn btn-circle bg-white border-[#0307121a] border-2 hover:bg-transparent hover:opacity-50"
+                            title="Flag">
                             <img src="images/flag.svg" alt="Flag">
                         </button>
                     </div>
                     <div class="">
-                        <button class="btn text-lg w-24 lg:w-32 h-10 lg:h-12 lg:text-xl font-bold rounded-[50px] text-white bg-[#797DFC] border-[#797DFC] hover:bg-white hover:border-[#797DFC] hover:text-[#797DFC]">
+                        <button
+                            class="btn text-lg w-24 lg:w-32 h-10 lg:h-12 lg:text-xl font-bold rounded-[50px] text-white bg-[#797DFC] border-[#797DFC] hover:bg-white hover:border-[#797DFC] hover:text-[#797DFC]">
                             Sign in
                         </button>
                     </div>
@@ -67,8 +77,54 @@
     <!-- Main Section -->
     <main>
         <!-- Hero Section -->
-        <section id="hero-section" class="">
+        <section id="hero-section" class="mx-8 lg:mx-32 lg:mt-12 mt-8">
+            <div class="max-w-[1440px] w-full mx-auto">
+                <!-- BG Image -->
+                <div class="w-full h-auto bg-[#12132D] bg-cover bg-center rounded-[32px]"
+                    style="background-image: url('images/bg-banner.png');">
+                    <!-- Texts Inside Banner -->
+                    <div
+                        class="w-full px-3 py-4 lg:p-24 flex flex-col lg:flex-row justify-center items-center lg:justify-between">
+                        <!-- Title & Search -->
+                        <div class="w-full lg:w-3/5 flex flex-col gap-2 lg:gap-5 p-2">
+                            <h2 class="text-white text-2xl lg:text-6xl font-black text-center lg:text-left" style="line-height: 125%;">Welcome to the <br>
+                                <span class="gradient-title-fin">Finnegan's</span> Forum</h2>
 
+                            <p class="w-full lg:w-3/5 text-white text-base lg:text-xl font-medium text-center lg:text-left mb-4">Share your favorite opinion and win and wp
+                                forum
+                                coffee mug!</p>
+                            <!-- Search -->
+                            <div class="w-full lg:w-2/3 flex justify-between items-center gap-1 h-11 lg:h-14 bg-white p-2 rounded-[46px]">
+                                <form class="px-0">
+                                    <input class="input rounded-[46px] text-sm lg:text-base w-full h-8 lg:h-13" type="text" name="search" id="search-field"
+                                        placeholder="Search anything here">
+                                </form>
+                                <button
+                                    class="w-[100px] lg:w-28 h-9 lg:h-11 p-0 text-base lg:text-xl font-bold rounded-[46px] text-white bg-[#797DFC] border-[#797DFC] border hover:bg-white hover:border-[#797DFC] hover:text-[#797DFC]">Search</button>
+                            </div>
+                        </div>
+                        <!-- Stats -->
+                        <div class="w-11/12 lg:w-1/3 font-medium text-base lg:text-2xl flex flex-col gap-2 lg:gap-6 bg-white p-6 lg:p-12 rounded-[32px]">
+                            <div class="flex justify-between items-center">
+                                <h3>Registered Users</h3>
+                                <span>20</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <h3>Forum</h3>
+                                <span>05</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <h3>Topics</h3>
+                                <span>20</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <h3>Replies</h3>
+                                <span>12</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Let's Discuss Section -->
