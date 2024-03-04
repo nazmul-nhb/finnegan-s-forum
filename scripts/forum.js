@@ -20,7 +20,7 @@ const displayAllPosts = (posts) => {
     posts.forEach(post => {
         // Displaying all the posts from API
         const postCard = document.createElement('div');
-        postCard.className = 'w-full bg-[#F3F3F5] p-4 lg:p-10 rounded-3xl flex flex-col lg:flex-row justify-start gap-6 cursor-pointer hover:bg-[#797dfc1a] hover:border-[#797dfc] border border-[#F3F3F5]';
+        postCard.className = 'w-full bg-[#F3F3F5] border border-[#F3F3F5] p-4 lg:p-10 rounded-3xl flex flex-col lg:flex-row justify-start gap-6 cursor-pointer hover:bg-[#797dfc1a] hover:border-[#797dfc]';
         postCard.innerHTML = `
                             <div class="w-[72px] relative">
                                 <img class="rounded-2xl" src="${post.image}" alt="Profile Picture">
@@ -80,7 +80,7 @@ const displayAllPosts = (posts) => {
 // Display Error Message if Search Does Not Match
 const displayError = (message) => {
     const postCard = document.createElement('div');
-    postCard.className = 'w-full bg-[#797DFC1A] p-4 lg:p-10 rounded-3xl flex flex-col lg:flex-row justify-start gap-6';
+    postCard.className = 'w-full bg-[#797DFC1A] border border-[#F3F3F5] p-4 lg:p-10 rounded-3xl flex flex-col lg:flex-row justify-start gap-6 cursor-pointer hover:bg-[#797dfc1a] hover:border-[#797dfc]';
     postCard.innerHTML = `
                 <h2 class="font-bold text-red-600 text-lg lg:text-3xl mb-2">${message}</h2>`;
     allPostsContainer.appendChild(postCard);
@@ -155,12 +155,13 @@ const searchHandler = () => {
 
 
 // Handling Search with Enter Button
+/* 
 searchField.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
         searchHandler();
     }
 })
-
+ */
 
 // Toggle Spinner/Loader
 const loadingSpinner = (isLoading) => {
