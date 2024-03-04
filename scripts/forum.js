@@ -1,5 +1,5 @@
 // Load All Posts from API
-const loadAllPosts = async (searchText) => {
+const loadAllPosts = async (searchText='') => {
     const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchText}`);
     const data = await res.json();
     posts = data.posts;
