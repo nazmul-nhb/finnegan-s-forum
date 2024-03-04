@@ -1,8 +1,9 @@
 // Load All Posts from API
-const loadAllPosts = async () => {
-    const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/posts');
+const loadAllPosts = async (searchText='') => {
+    const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchText}`);
     const data = await res.json();
     posts = data.posts;
+    console.log(posts);
     displayAllPosts(posts);
 }
 
@@ -58,7 +59,6 @@ const displayAllPosts = (posts) => {
 
 // Enable Mark as Read Button
 const markAsRead = (title, viewCount) => {
-    console.log(title, viewCount);
     const markedAsReadContainer = document.getElementById('marked-as-read-container');
     const readPostCard = document.createElement('div');
     readPostCard.className = 'bg-white rounded-2xl p-2 lg:p-4 flex justify-between items-center flex-1 gap-2';
@@ -107,7 +107,24 @@ const displayLatestPosts = (latestPosts) => {
     });
 }
 
+// Search Functionality
+// const searchButton = document.getElementById('search-button');
+const searchField = document.getElementById('search-field');
+const searchHandler = () => {
+    const searchText = searchField.value;
+    allPostsContainer.textContent = '';
+    loadAllPosts(searchText);
+}
 
+
+// Handling Search with Enter Button
+/* 
+searchField.addEventListener('keyup', (e) => {
+    if (e.key === 'Enter') {
+        searchHandler();
+    }
+})
+ */
 
 loadAllPosts();
 loadLatestPosts();

@@ -104,7 +104,7 @@
                                     <input class="input rounded-[46px] text-sm lg:text-base w-full h-8 lg:h-13"
                                         type="text" name="search" id="search-field" placeholder="Search anything here">
                                 </form>
-                                <button
+                                <button onclick="searchHandler()" id="search-button"
                                     class="w-[100px] lg:w-28 h-9 lg:h-11 p-0 text-base lg:text-xl font-bold rounded-[46px] text-white bg-[#797DFC] border-[#797DFC] border hover:bg-white hover:border-[#797DFC] hover:text-[#797DFC]">Search</button>
                             </div>
                         </div>
@@ -195,15 +195,15 @@
                         <div class="flex justify-between items-center">
                             <h3 class="text-base lg:text-xl font-bold">Title</h3>
                             <p class="text-[#12132D99] text-sm lg:text-base">
-                                <i class="fa-solid fa-check-double text-[#3DCE09]"></i> Mark as read (<span
-                                    id="post-read-count">0</span>)
+                                <i class="fa-solid fa-check-double text-[#3DCE09]"></i> Mark as Read ( <span
+                                    id="post-read-count">0</span> )
                             </p>
                         </div>
                         <!-- Dynamic Marked Titles Container -->
                         <div id="marked-as-read-container" class="flex flex-col gap-4">
-                            <!-- Dynamic Marked Title -->
-                            
-<!--                             <div class="bg-white rounded-2xl p-2 lg:p-4 flex justify-between items-center flex-1 gap-2">
+                            <!-- Dynamic Marked Title -->                          
+<!--
+                            <div class="bg-white rounded-2xl p-2 lg:p-4 flex justify-between items-center flex-1 gap-2">
                                 <h4 class="text-sm lg:text-xl font-semibold w-2/3">10 Kids Unaware of Their Halloween
                                     Costume</h4>
                                 <h5 class="text-[#12132D99] text-sm lg:text-base"><i class="fa-regular fa-eye"></i>
