@@ -155,13 +155,13 @@ const searchHandler = () => {
 
 
 // Handling Search with Enter Button
-/* 
 searchField.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
+        e.preventDefault();    
         searchHandler();
-    }
+}
 })
- */
+
 
 // Toggle Spinner/Loader
 const loadingSpinner = (isLoading) => {
@@ -169,6 +169,6 @@ const loadingSpinner = (isLoading) => {
     isLoading ? loadingSpinner.classList.remove('hidden') : loadingSpinner.classList.add('hidden');
 }
 
-
+// Load All Posts and Latest Posts by Default
 loadAllPosts();
 loadLatestPosts();
