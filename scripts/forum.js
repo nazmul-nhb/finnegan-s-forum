@@ -20,7 +20,7 @@ const displayAllPosts = (posts) => {
     posts.forEach(post => {
         // Displaying all the posts from API
         const postCard = document.createElement('div');
-        postCard.className = 'w-full bg-[#797DFC1A] p-4 lg:p-10 rounded-3xl flex flex-col lg:flex-row justify-start gap-6';
+        postCard.className = 'w-full bg-[#F3F3F5] p-4 lg:p-10 rounded-3xl flex flex-col lg:flex-row justify-start gap-6 cursor-pointer hover:bg-[#797dfc1a] hover:border-[#797dfc] border border-[#F3F3F5]';
         postCard.innerHTML = `
                             <div class="w-[72px] relative">
                                 <img class="rounded-2xl" src="${post.image}" alt="Profile Picture">
