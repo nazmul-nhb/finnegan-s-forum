@@ -8,7 +8,8 @@ const loadAllPosts = async (searchText = '') => {
 }
 
 const allPostsContainer = document.getElementById('all-posts-container');
-const postReadCountContainer = document.getElementById('post-read-count');
+let postReadCountContainer = document.getElementById('post-read-count');
+const markedAsReadContainer = document.getElementById('marked-as-read-container');
 let postReadCount = parseInt(postReadCountContainer.innerText);
 // const markAsReadButton = document.getElementById('mark-as-read');
 const latestPostsContainer = document.getElementById('latest-posts-container');
@@ -59,6 +60,7 @@ const displayAllPosts = (posts) => {
                 post.isActive ? onlineStatus.classList.remove('hidden') : null;
                 !post.isActive ? offlineStatus.classList.remove('hidden') : null;
          */
+
         // Using If
         /*         
                 if (post.isActive) {
@@ -78,7 +80,6 @@ const displayAllPosts = (posts) => {
 
 // Enable Mark as Read Button
 const markAsRead = (title, viewCount) => {
-    const markedAsReadContainer = document.getElementById('marked-as-read-container');
     const readPostCard = document.createElement('div');
     readPostCard.className = 'bg-white rounded-2xl p-2 lg:p-4 flex justify-between items-center flex-1 gap-2';
     readPostCard.innerHTML = `
@@ -113,7 +114,7 @@ const displayLatestPosts = (latestPosts) => {
                     <h4 class="text-[#12132D99]">
                     <i class="fa-regular fa-calendar-minus"></i> ${post?.author?.posted_date || 'No Publish Date'} </h4>
                     <h3 class="font-extrabold text-lg">${post.title}</h3>
-                    <p class="text-[#12132D99]">${post.description}</p>
+                    <p class="text-[#12132D99] min-h-20">${post.description}</p>
                     <div class="flex justify-start gap-4">
                         <img class="w-12 h-12 rounded-full" src="${post.profile_image}" alt="Profile Picture">
                         <div class="flex flex-col gap-1">
@@ -133,7 +134,10 @@ const searchHandler = () => {
     // Showing Loading Spinner
     loadingSpinner(true);
     const searchText = searchField.value;
+    // Reset Posts and Mark as Read
     allPostsContainer.textContent = '';
+    markedAsReadContainer.textContent = '';
+    postReadCountContainer.innerText = 0;
     loadAllPosts(searchText);
 }
 
