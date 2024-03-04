@@ -1,16 +1,17 @@
 // Load All Posts from API
-const loadAllPosts = async (searchText = '') => {
+const loadAllPosts = async (searchText) => {
     const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchText}`);
     const data = await res.json();
     posts = data.posts;
-    console.log(posts);
-    displayAllPosts(posts);
+    // console.log(data.message);
+    posts.length === 0 ? displayError(data.message) : displayAllPosts(posts);
 }
 
 const allPostsContainer = document.getElementById('all-posts-container');
-let postReadCountContainer = document.getElementById('post-read-count');
 const markedAsReadContainer = document.getElementById('marked-as-read-container');
+let postReadCountContainer = document.getElementById('post-read-count');
 let postReadCount = parseInt(postReadCountContainer.innerText);
+
 // const markAsReadButton = document.getElementById('mark-as-read');
 const latestPostsContainer = document.getElementById('latest-posts-container');
 
@@ -77,6 +78,18 @@ const displayAllPosts = (posts) => {
     }, 2000);
 }
 
+const displayError = (message) => {
+    console.log(message);
+    const postCard = document.createElement('div');
+    postCard.className = 'w-full bg-[#797DFC1A] p-4 lg:p-10 rounded-3xl flex flex-col lg:flex-row justify-start gap-6';
+    postCard.innerHTML = `
+                <h2 class="font-bold text-lg lg:text-xl mb-2">${message}</h2>`;
+    allPostsContainer.appendChild(postCard);
+    // Hiding Loading Spinner after 2s
+    setTimeout(() => {
+        loadingSpinner(false);
+    }, 2000);
+}
 
 // Enable Mark as Read Button
 const markAsRead = (title, viewCount) => {
@@ -138,6 +151,7 @@ const searchHandler = () => {
     allPostsContainer.textContent = '';
     markedAsReadContainer.textContent = '';
     postReadCountContainer.innerText = 0;
+    postReadCount = 0;
     loadAllPosts(searchText);
 }
 
