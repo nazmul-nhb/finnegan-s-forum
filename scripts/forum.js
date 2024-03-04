@@ -3,7 +3,6 @@ const loadAllPosts = async (searchText) => {
     const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchText}`);
     const data = await res.json();
     posts = data.posts;
-    // console.log(data.message);
     posts.length === 0 ? displayError(data.message) : displayAllPosts(posts);
 }
 
@@ -12,8 +11,10 @@ const markedAsReadContainer = document.getElementById('marked-as-read-container'
 let postReadCountContainer = document.getElementById('post-read-count');
 let postReadCount = parseInt(postReadCountContainer.innerText);
 
-// const markAsReadButton = document.getElementById('mark-as-read');
 const latestPostsContainer = document.getElementById('latest-posts-container');
+
+// const searchButton = document.getElementById('search-button');
+// const markAsReadButton = document.getElementById('mark-as-read');
 
 const displayAllPosts = (posts) => {
     posts.forEach(post => {
@@ -72,23 +73,18 @@ const displayAllPosts = (posts) => {
                 }
          */
     });
-    // Hiding Loading Spinner after 2s
-    setTimeout(() => {
         loadingSpinner(false);
-    }, 2000);
+
 }
 
+// Display Error Message if Search Does Not Match
 const displayError = (message) => {
-    console.log(message);
     const postCard = document.createElement('div');
     postCard.className = 'w-full bg-[#797DFC1A] p-4 lg:p-10 rounded-3xl flex flex-col lg:flex-row justify-start gap-6';
     postCard.innerHTML = `
-                <h2 class="font-bold text-lg lg:text-xl mb-2">${message}</h2>`;
+                <h2 class="font-bold text-red-600 text-lg lg:text-3xl mb-2">${message}</h2>`;
     allPostsContainer.appendChild(postCard);
-    // Hiding Loading Spinner after 2s
-    setTimeout(() => {
-        loadingSpinner(false);
-    }, 2000);
+    loadingSpinner(false);
 }
 
 // Enable Mark as Read Button
@@ -141,7 +137,6 @@ const displayLatestPosts = (latestPosts) => {
 }
 
 // Search Functionality
-// const searchButton = document.getElementById('search-button');
 const searchField = document.getElementById('search-field');
 const searchHandler = () => {
     // Showing Loading Spinner
@@ -152,7 +147,10 @@ const searchHandler = () => {
     markedAsReadContainer.textContent = '';
     postReadCountContainer.innerText = 0;
     postReadCount = 0;
-    loadAllPosts(searchText);
+    // Show Loading Spinner for 2s
+    setTimeout(() => {
+        loadAllPosts(searchText);
+    }, 2000);
 }
 
 
