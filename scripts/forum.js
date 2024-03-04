@@ -1,5 +1,5 @@
 // Load All Posts from API
-const loadAllPosts = async (searchText='') => {
+const loadAllPosts = async (searchText = '') => {
     const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchText}`);
     const data = await res.json();
     posts = data.posts;
@@ -45,15 +45,32 @@ const displayAllPosts = (posts) => {
                             </div>`;
         allPostsContainer.appendChild(postCard);
 
+        // Set Online Status
         const onlineStatus = document.getElementById(`online-status-${post.id}`);
         const offlineStatus = document.getElementById(`offline-status-${post.id}`);
-        if (post.isActive) {
-            onlineStatus.classList.remove('hidden');
-        }
-        if (!post.isActive) {
-            offlineStatus.classList.remove('hidden');
-        }
+
+        // Using Logical AND
+
+        post.isActive && onlineStatus.classList.remove('hidden');
+        !post.isActive && offlineStatus.classList.remove('hidden');
+
+        // Using Ternary Operator
+        /* 
+                post.isActive ? onlineStatus.classList.remove('hidden') : null;
+                !post.isActive ? offlineStatus.classList.remove('hidden') : null;
+         */
+        // Using If
+        /*         
+                if (post.isActive) {
+                    onlineStatus.classList.remove('hidden');
+                }
+                if (!post.isActive) {
+                    offlineStatus.classList.remove('hidden');
+                }
+         */
     });
+    // Hiding Loading Spinner
+    loadingSpinner(false);
 }
 
 
@@ -111,6 +128,8 @@ const displayLatestPosts = (latestPosts) => {
 // const searchButton = document.getElementById('search-button');
 const searchField = document.getElementById('search-field');
 const searchHandler = () => {
+    // Showing Loading Spinner
+    loadingSpinner(true);
     const searchText = searchField.value;
     allPostsContainer.textContent = '';
     loadAllPosts(searchText);
@@ -124,7 +143,14 @@ searchField.addEventListener('keyup', (e) => {
         searchHandler();
     }
 })
- */
+*/
+
+// Toggle Spinner/Loader
+const loadingSpinner = (isLoading) => {
+    const loadingSpinner = document.getElementById('loading-spinner');
+    isLoading ? loadingSpinner.classList.remove('hidden') : loadingSpinner.classList.add('hidden');
+}
+
 
 loadAllPosts();
 loadLatestPosts();
