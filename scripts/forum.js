@@ -1,5 +1,5 @@
 // Load All Posts from API
-const loadAllPosts = async (searchText='') => {
+const loadAllPosts = async (searchText = '') => {
     const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchText}`);
     const data = await res.json();
     posts = data.posts;
@@ -73,8 +73,7 @@ const displayAllPosts = (posts) => {
                 }
          */
     });
-        loadingSpinner(false);
-
+    loadingSpinner(false);
 }
 
 // Display Error Message if Search Does Not Match
@@ -127,8 +126,8 @@ const displayLatestPosts = (latestPosts) => {
                     <div class="flex justify-start gap-4">
                         <img class="w-12 h-12 rounded-full" src="${post.profile_image}" alt="Profile Picture">
                         <div class="flex flex-col gap-1">
-                            <h3 class="font-bold">${post?.author?.name || 'Name Not Available'}</h3>
-                            <h4 class="text-[#12132D99] text-sm">${post?.author.designation || 'Unknown'}</h4>
+                            <h3 class="font-bold">${post?.author?.name || 'Name Unknown'}</h3>
+                            <h4 class="text-[#12132D99] text-sm">${post?.author?.designation || 'Unknown'}</h4>
                         </div>
                     </div>
         `;
@@ -157,9 +156,9 @@ const searchHandler = () => {
 // Handling Search with Enter Button
 searchField.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
-        e.preventDefault();    
+        e.preventDefault();
         searchHandler();
-}
+    }
 })
 
 
