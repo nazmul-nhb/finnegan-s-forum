@@ -20,7 +20,7 @@ const displayAllPosts = (posts) => {
         postCard.className = 'w-full bg-[#797DFC1A] p-4 lg:p-10 rounded-3xl flex flex-col lg:flex-row justify-start gap-6';
         postCard.innerHTML = `
                             <div class="w-[72px] relative">
-                                <img src="${post.image}" alt="Profile Picture">
+                                <img class="rounded-2xl" src="${post.image}" alt="Profile Picture">
                                 <img id="online-status-${post.id}" class="absolute -top-1 -right-1 hidden" src="images/online.svg" alt="online">
                                 <img id="offline-status-${post.id}" class="absolute -top-1 -right-1 hidden" src="images/offline.svg" alt="offline">
                             </div>
@@ -69,8 +69,10 @@ const displayAllPosts = (posts) => {
                 }
          */
     });
-    // Hiding Loading Spinner
-    loadingSpinner(false);
+    // Hiding Loading Spinner after 2s
+    setTimeout(() => {
+        loadingSpinner(false);
+    }, 2000);
 }
 
 
@@ -137,13 +139,12 @@ const searchHandler = () => {
 
 
 // Handling Search with Enter Button
-/* 
-searchField.addEventListener('keyup', (e) => {
+searchField.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
         searchHandler();
     }
 })
-*/
+
 
 // Toggle Spinner/Loader
 const loadingSpinner = (isLoading) => {
